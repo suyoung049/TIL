@@ -1,3 +1,4 @@
 f = input()
-f = float(f)
+f = float(f) 
 print(f)
+
