@@ -8,5 +8,5 @@
 
 ## 2 Week
 
-### 😏[7.11](./2week/7.11_Theory.md)
+### 😏[7.11](./2week/7.11_Theory.md)         😢 [7.12](./2week/7.12_Theory.md)
 
