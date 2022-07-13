@@ -3,6 +3,7 @@ for char in 'apple':
         print('b!')
         break
     else:
-        print(char)
+        result = (char)
+    print(result)
 else:
     print('b가 없습니다')
