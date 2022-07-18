@@ -1,5 +1,6 @@
 chars = input() #range(len(chars))
 for idx in range(len(chars)):
+    print(idx)
     print(chars[-1-idx], end ='')
 
 # 강사님 풀이
