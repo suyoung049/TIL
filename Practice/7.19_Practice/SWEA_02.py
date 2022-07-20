@@ -11,6 +11,6 @@ for test_case in range(1, T +1):
     for i in numbers:
         sum += i
         count += 1
-        result = round(sum/count)
+        result = round(sum/count) # round 소수점 첫째자리에서 반올림
         
     print(f"#{n} {result} ")

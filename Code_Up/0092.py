@@ -2,7 +2,7 @@ n = int(input())
 a = input().split()
 
 for i in range(n):
-    a[i] = int(a[i])
+    a[i] = int(a[i])  # range 쓸 때, 형변환 방법
 
 d =[]
 for i in range(24):
