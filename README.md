@@ -14,4 +14,4 @@
 
 ## 3week
 
-### 🚑 [7.18](./3week/7.18_Theory.md)      😶[7.19](./3week/7.19_Theory.md)         😒[7.20](./3week/7.20_Theory.md)        😉[7.21](./3week/7.21_Theory.md)
+### 🚑 [7.18](./3week/7.18_Theory.md)      😶[7.19](./3week/7.19_Theory.md)         😒[7.20](./3week/7.20_Theory.md)        😉[7.21](./3week/7.21_Theory.md)    😁7.22(project)
