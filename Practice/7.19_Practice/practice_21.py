@@ -13,6 +13,6 @@ while n > 0:
 num = 123
 result = 0
 while num:
-    result *= 10
+    result %= 10
     result += num%10
 print(result)
