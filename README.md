@@ -8,7 +8,7 @@
 
 ## 2 Week
 
-### 😏[7.11](./2week/7.11_Theory.md)         😢 [7.12](./2week/7.12_Theory.md)        🏆[7.13](./2week/7.13_Theory.md)      😭[7.14](./2week/7.14_Theory.md)     😨[7.15(Project)](https://github.com/suyoung049/01-PJT-01/tree/master/2회차/이수영)
+### 😏[7.11](./2week/7.11_Theory.md)         😢 [7.12](./2week/7.12_Theory.md)        🏆[7.13](./2week/7.13_Theory.md)      😭[7.14](./2week/7.14_Theory.md)     😨[7.15(Project)](https://github.com/kdt-hphk/01-PJT-01/tree/master/2회차/이수영)
 
 
 
