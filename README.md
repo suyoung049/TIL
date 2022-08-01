@@ -22,3 +22,8 @@
 
 ### 😭[7.25](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220725)     ⭐[7.26](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220726)    ❤[7.27](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220727)     💪[7.28](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220728)  👏[7.29(1주차 코딩테스트)](https://github.com/suyoung049/01-PJT-03/tree/master/2회차/이수영)
 
+
+
+## 5week(코딩테스트 & 알고리즘 2)
+
+### 🚑[8.01](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220801)
