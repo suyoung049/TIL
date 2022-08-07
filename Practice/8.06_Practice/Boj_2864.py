@@ -1,0 +1,10 @@
+a, b = map(str, (input().split()))
+sum_1 = int(a) + int(b)
+a_1 = a.replace('5', '6')
+b_1 = b.replace('5', '6')
+a_2 = a.replace('6', '5')
+b_2 = b.replace('6', '5')
+sum_2 = int(a_1) + int(b_1)
+sum_3 = int(a_2) + int(b_2)
+sum_list = [sum_1, sum_2, sum_3]
+print(min(sum_list), max(sum_list))
