@@ -32,5 +32,5 @@
 
 ## 6week(코딩테스트 & 알고리즘 3)
 
-### ❓❓ [8.08](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220808)  🏋️‍♀️ [8.09](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220809)  😫 [8.10](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220810)  👏[8.11](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220811)
+### ❓❓ [8.08](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220808)  🏋️‍♀️ [8.09](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220809)  😫 [8.10](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220810)  👏[8.11](https://github.com/suyoung049/01-ALGORITHM/tree/master/2회차/이수영/20220811)  🎉 [8.12(3주차 코딩테스트)](https://github.com/suyoung049/01-PJT-05/tree/master/2회차/이수영)
 
