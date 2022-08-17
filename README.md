@@ -38,4 +38,4 @@
 
 ## 7wwk(DB)
 
-### 😏 [8.16](./8week/8.16_Theory.md)
+### 😏 [8.16](./8week/8.16_Theory.md)  👍 [8.17](./8week/8.17_Theory.md)
