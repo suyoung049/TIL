@@ -36,7 +36,12 @@
 
 
 
-## 7wwk(DB)
+## 7week(DB)
 
 ### 😏 [8.16](./8week/8.16_Theory.md)  👍 [8.17](./8week/8.17_Theory.md)  💪[8.18](./8week/8.18_Theory.md)   ❓❓ [8.19](./8week/8.19_Theory.md)
 
+
+
+## 8week(DB)
+
+### 🏃‍♂️ [8.22](./8week/8.22_Theory.md)
