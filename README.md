@@ -44,4 +44,4 @@
 
 ## 8week(DB)
 
-### 🏃‍♂️ [8.22](./8week/8.22_Theory.md)  😣 [8.23](./8week/8.23_Theory.md)
+### 🏃‍♂️ [8.22](./8week/8.22_Theory.md)  😣 [8.23](./8week/8.23_Theory.md)  😉 [8.24](./8week/8.24_Theory.md)
