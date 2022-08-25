@@ -26,7 +26,7 @@ for test_case in range(1, T+1):
 
             r += dr[dist]
             c += dc[dist]
-    
+    print(f'#{test_case}')
     for row in matrix:
         print(*row)
     print()
