@@ -4,21 +4,20 @@ sys.stdin = open('3_input.txt', 'r')
 
 
 
-n = int(input())
-stack = []
 
-for i in range(n,0,-1):
-    stack.append(i)
+# for i in range(n,0,-1):
+#     stack.append(i)
 
-while True:
-    if len(stack) == 1:
-        break
-    else:
-        pop = stack.pop()
-        pop_ = stack.pop()
-        stack.insert(0, pop_)
+# while True:
+#     if len(stack) == 1:
+#         break
+#     else:
+#         pop = stack.pop()
+#         pop_ = stack.pop()
+#         stack.insert(0, pop_)
 
-print(*stack)
+# print(*stack)
+# 이렇게 진행할시 결과값에 시간초과 deque를 이용하는게 훨씬 효과적
 
 from collections import deque
 
