@@ -50,4 +50,4 @@
 
 ## 9week(HTML)
 
-### 👍 [8.29](./8week/8.29_Theory.md)
+### 👍 [8.29](./8week/8.29_Theory.md)  😫 [8.30](./8week/8.30_Theory.md)  😌 [8.31](./8week/8.31_Theory.md)

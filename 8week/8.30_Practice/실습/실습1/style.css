@@ -1,1 +1,25 @@
 /* 아래에 CSS를 작성해주세요. */
+.subtext{
+    display: block;
+    font-size: 16px;
+}
+.title{
+    text-align:center;
+}
+
+.item-list {
+    width: 900px;
+    display:flex;
+}
+.item{
+    width: 300px;
+    margin: 0.5rem
+    
+}
+.item-img {
+    width: 100%;
+}
+
+.item-subtitle {
+    font-weight: bold;
+}
