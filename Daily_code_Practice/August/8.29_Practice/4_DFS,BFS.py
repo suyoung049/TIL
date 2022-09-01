@@ -1,5 +1,8 @@
 import sys
+from collections import deque
+
 sys.stdin = open('4_input.txt', 'r')
+input = sys.stdin.readline
 
 N, M, K = map(int, input().split())
 
@@ -24,4 +27,21 @@ def dfs(start):
             dfs(i)
             visited[i] = True
 
+
+def bfs(start):
+    q=deque([start])
+    visited[start]=True
+    while q:
+        now=q.popleft()
+        print(now,end=' ')
+        for i in graph_list[now]:
+            if not visited[i]:
+                visited[i]=True
+                q.append(i)
+                
 dfs(K)
+visited=[False]*(N+1)
+print()
+bfs(K)
+
+
