@@ -12,6 +12,7 @@ map = [list(input().strip()) for _ in range(N)]
 
 
 def bfs(y,x):
+    
     count = 0
     q = deque([(y,x)])
     check = [[0]*M for _ in range(N)]
@@ -29,6 +30,7 @@ def bfs(y,x):
                     check[ny][nx] = (check[ey][ex] + 1)
                     count = max(count, check[ny][nx])
                     q.append((ny,nx))
+    
     return count-1
 
 
