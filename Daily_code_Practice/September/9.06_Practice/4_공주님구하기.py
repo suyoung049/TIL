@@ -12,7 +12,7 @@ map = [list(map(int, input().split())) for _ in range(n)]
 visit = [[0]*m for _ in range(n)]
 
 def bfs():
-    sword = 1001
+    sword = sys.maxsize
     q = deque([(0,0)])
     visit[0][0] = 1
 
@@ -20,10 +20,10 @@ def bfs():
         y, x = q.popleft()
         if (y, x) == (n-1,m-1):
            
-            return min(visit[y][x]-1,sword)
+            return min(visit[y][x]-1, sword)
 
         if map[y][x] == 2:
-            sword = (visit[y][x]-1) + (n-1-y) + (m-1-x)
+            sword = (visit[y][x]-1) + (n-1-y) + (m-1-x)  # 검에서부터 공주까지 최단거리
 
 
         for i in range(4):
@@ -31,7 +31,7 @@ def bfs():
             nx = x + dx[i]
 
             if 0<= ny <n and 0<= nx <m and visit[ny][nx] == 0:
-                if map[ny][nx] == 0 or map[ny][nx] == 2:
+                if map[ny][nx] == 0 or map[ny][nx] == 2:  # 0이라서 막혀있거나 2라서 검이라면 탐색 종료
                     visit[ny][nx] = visit[y][x] + 1
                     q.append((ny,nx)) 
     return sword
