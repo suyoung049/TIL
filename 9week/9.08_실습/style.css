@@ -1,0 +1,10 @@
+.header {
+    background-image: url("./images/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 330px;
+  }
+
+  .font {
+    color: rgb(106, 51, 51);
+  }
