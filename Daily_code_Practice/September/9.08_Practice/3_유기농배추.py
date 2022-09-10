@@ -23,6 +23,7 @@ for test_case in range(T):
     for _ in range(k):
         y, x = map(int, input().split())
         matrix[y][x] = 1
+    pprint(matrix)
     
     def bfs(y,x):
        
