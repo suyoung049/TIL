@@ -14,12 +14,12 @@ n , m = map(int,input().split())
 
 matrix = [list(map(int,input().split())) for _ in range(m)]
 q = deque([])
+
 for j in range(m):
     for i in range(n):
         if matrix[j][i] == 1:
             q.append((j,i))
         
-
 
 def bfs():
     

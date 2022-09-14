@@ -6,6 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- default styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme CSS files as mentioned below (and change the theme property of the plugin) -->
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- important mandatory libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
+
+<!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme JS files as mentioned below (and change the theme property of the plugin) -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.js"></script>
+
+<!-- optionally if you need translation for your language then include locale file as mentioned below (replace LANG.js with your own locale file) -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/locales/LANG.js"></script>
   <title>grid_2</title>
 </head>
 <body>
@@ -19,9 +36,24 @@
         <h2>Title</h2>
         <p class="d-md-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam necessitatibus modi quam velit voluptatibus ullam quaerat exercitationem vel explicabo deserunt, adipisci fugiat assumenda quasi perspiciatis ut harum. Iste ea deserunt alias earum doloribus ut numquam non pariatur. Voluptas, dolor! Voluptatem non iure eos rem deleniti sint est cupiditate, vel suscipit eligendi incidunt rerum minus molestiae illo quam modi autem maiores. Eveniet maxime impedit libero repudiandae vel facilis natus provident quisquam, repellendus optio. Ipsam minima fuga laudantium ducimus reprehenderit velit ab necessitatibus soluta repellat itaque, at beatae repellendus in excepturi distinctio doloremque eius labore nemo sit obcaecati. Earum neque sapiente sunt.</p>
 
-      </div>
-    </div>
-  </div>
+        <div class="star-rating space-x-4 mx-auto">
+          <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+          <label for="5-stars" class="star pr-4">★</label>
+          <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+          <label for="4-stars" class="star">★</label>
+          <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+          <label for="3-stars" class="star">★</label>
+          <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+          <label for="2-stars" class="star">★</label>
+          <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+          <label for="1-star" class="star">★</label>
+        </div>
+
+        <label for="input-2" class="control-label">별점</label>
+        <input id="input-2" name="input-2" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1">
+
+        <label for="input-4" class="control-label">Rate This</label>
+        <input id="input-4" name="input-4" class="rating rating-loading" data-show-clear="false" data-show-caption="true">
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
