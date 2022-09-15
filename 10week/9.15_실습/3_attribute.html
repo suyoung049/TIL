@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.red {
+		color: red;
+	}
+
+	.blue {
+		color: blue;
+	}
+</style>
+
+<body>
+	<h1 class="red">안녕하세요</h1>
+	<script>
+		const a = document.createElement('a')
+		a.innerText = '실라버스'
+
+		const body = document.querySelector('body')
+		body.appendChild(a)
+		a.setAttribute('href', 'http://naver.com')
+		console.log(a.getAttribute('href'))
+		a.setAttribute('class', 'blue')
+
+		const h1 = document.querySelector('h1')
+    	console.log(h1.classList)
+
+
+	</script>
+
+	<h2> 복습 복습</h2>
+	<button id="btn1">클릭</button>
+	<script>
+		const btn1 = document.querySelector('#btn1')
+		btn1.addEventListener('click', function () {
+			let year = prompt('ECMAScript-2015 명세는 몇 년도에 출판되었을까요?', '');
+
+			if (year < 2015) {
+				alert('숫자를 좀 더 올려보세요.');
+			} else if (year > 2015) {
+				alert('숫자를 좀 더 내려보세요.');
+			} else {
+				alert('정답입니다!');
+			}
+		})
+		let dount = 1
+		console.log(dount)
+		console.log('a 값은 ' + a)
+
+		
+
+
+
+	</script>
+</body>
+
+</html>

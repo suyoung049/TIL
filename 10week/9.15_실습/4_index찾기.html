@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		const str = "abab";
+		document.writeln(str.indexOf('ab'));
+		document.write("<br>");   // 0번째 인덱스 부터 시작 0반환
+		document.writeln(str.indexOf('ba'));
+		document.write("<br>");   // 1번째 인덱스부터 시작 1반환
+		document.writeln(str.indexOf('abc'));
+		document.write("<br>");  // 없는 문자 -1 반환
+		document.writeln(str.indexOf('AB'));
+		document.write("<br>");
+		document.writeln(str.indexOf('ab', 1));
+		document.write("<br>");  // 지정된 위치의 인덱스 부터 시작 2반환
+
+		const text = 'abcabcabc';
+		const searchvalue = 'ab';
+
+		let pos = 0;      // 바껴야 하는 변수 let 지정
+		while (true) {
+			let foundPos = text.indexOf(searchvalue, pos);
+			if (foundPos == -1) break;
+
+			document.writeln(foundPos);
+			pos = foundPos + 1;
+		}
+
+
+	</script>
+
+</body>
+
+</html>

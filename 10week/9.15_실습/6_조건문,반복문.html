@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log('hello, js')
+    alert('js 학습이 시작되었습니다.')
+    const title = document.createElement('h1')
+    title.innerText = 'JS 기초'
+
+    const body = document.querySelector('body')
+    body.appendChild(title)
+
+    let accessAllowed;
+    let age = prompt('나이를 입력해 주세요.', '');
+
+    if (age > 18) {
+      accessAllowed = true;
+    } else {
+      accessAllowed = false;
+    }
+
+    alert(accessAllowed);
+    let year = prompt('ECMAScript-2015 명세는 몇 년도에 출판되었을까요?', '');
+
+    if (year < 2015) {
+      alert('숫자를 좀 더 올려보세요.');
+    } else if (year > 2015) {
+      alert('숫자를 좀 더 내려보세요.');
+    } else {
+      alert('정답입니다!');
+    }
+
+    let x = prompt();
+    while (x< 10) 
+    {x++ ;
+    alert(x)}
+
+    var arr = [10, 20, 30, 40, 50];
+
+    for (var i = 0; i < arr.length; i++) { // 배열 arr의 모든 요소의 인덱스(index)를 출력함.
+      document.write(arr[i] + " ");
+    }
+    document.write("<br>");
+
+    for (var value of arr) { // 위와 같은 동작을 하는 for / of 문
+      document.write(value + " ");
+    }
+
+    var num_ = [34, 49, 58, 473, 36, 87]
+
+    var max_ = 0
+    var max_2 = 0
+
+    for (var i = 0; i < arr.length; i++){
+      if (num_[i] > max_) {
+        var max_ = num_[i]
+      }
+    }
+    document.write(max_)
+
+
+    
+
+
+
+  </script>
+
+</body>
+
+</html>
