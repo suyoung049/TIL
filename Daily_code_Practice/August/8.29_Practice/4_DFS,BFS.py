@@ -25,7 +25,7 @@ def dfs(start):
     for i in graph_list[start]:
         if not visited[i]:
             dfs(i)
-            visited[i] = True
+            
 
 
 def bfs(start):

@@ -23,6 +23,7 @@ for j in range(n):
             virous.append((matrix[j][i], j, i))
 
 virous.sort()
+print(virous)
 
 def bfs(s):
     count = 0

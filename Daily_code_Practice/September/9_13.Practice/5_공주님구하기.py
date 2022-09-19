@@ -40,7 +40,7 @@ def bfs():
                 if matrix[ny][nx] == 0 or matrix[ny][nx] == 2:
                     visit[ny][nx] = visit[y][x] + 1
                     q.append((ny,nx))
-    return soward
+    return soward  # 목적지에 도달하지 못하였을때 
 
 result = bfs()
 

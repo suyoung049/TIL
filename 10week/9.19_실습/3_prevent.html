@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>정말 <span>중요한</span> 내용</h1>
+  </div>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore harum rem minus culpa, quaerat dolore. Quaerat
+    aperiam numquam, doloribus dicta dolor id voluptate ad atque reprehenderit aspernatur impedit laboriosam
+    repellendus?
+    Odio repellendus nisi natus eveniet dignissimos odit illo dicta maxime perferendis minima delectus incidunt,
+    assumenda non magnam cum asperiores accusantium sunt officia unde iste itaque quam placeat aperiam repudiandae.
+    Nesciunt?
+    Consectetur dolore perferendis at dignissimos, provident itaque magnam beatae iste quisquam, adipisci, eum dicta
+    nihil quod cupiditate iure fuga pariatur totam! Ab laboriosam temporibus aperiam reiciendis, optio nostrum eius
+    alias?
+    Cumque hic in nihil similique officiis quibusdam quis nam odio sunt incidunt ducimus ratione architecto eligendi,
+    placeat aperiam iusto perspiciatis atque quidem reiciendis, sed tenetur omnis repudiandae beatae eveniet. Rerum.
+    Dignissimos aspernatur quisquam veritatis necessitatibus eveniet consectetur dolorem esse iusto mollitia nemo rem
+    odio facere ab quo non perspiciatis enim doloribus, sapiente repellendus omnis cumque! Provident fuga eum temporibus
+    repellat.
+  </p>
+
+  <script>
+    const h1 = document.querySelector('h1')
+    h1.addEventListener('copy', function (event) {
+      event.preventDefault()
+      alert('복사 금지')
+    })
+
+    h1.addEventListener('click', function (event) {
+      event.preventDefault(
+        console.log(event.button)
+      )
+    })
+  </script>
+</body>
+
+</html>
