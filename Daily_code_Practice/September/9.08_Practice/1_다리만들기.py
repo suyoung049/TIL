@@ -63,7 +63,7 @@ for j in range(n):
         if map[j][i] == 1 and check[j][i] == False:
             count += 1
             dfs (j, i, count) 
-            
+pprint(map)     
 
 for i in range(1,count+1):
     bfs(i)

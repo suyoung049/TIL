@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>토이프로젝트</title>
+  <style>
+    .ball {
+      margin: 0.5rem;
+      width: 7rem;
+      height: 7rem;
+      background-color: yellowgreen;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 7rem;
+      font-size: xx-large;
+      font-weight: bold;
+    }
+
+    .ball-container {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>로또 추천 번호</h1>
+  <button id="randomBtn">번호 생성</button>
+  <select name="number" onchange="handleOnChange(this)">
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="fow">4</option>
+    <option value="five">5</option>
+    <option value="six">6</option>
+  </select>
+  <div id='result'></div>
+  <div id="result"></div>
+  <div class="ball-container">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    function handleOnChange(e) {
+      const value = e.value;
+      console.log(value)
+    }
+  </script>
+
+  <script>
+    const button = document.querySelector('#randomBtn')
+    button.addEventListener('click', function () {
+      const number = _.sampleSize(_.range(1, 46), 6)
+      console.log(number)
+      const ballcontainer = document.createElement('div')
+      ballcontainer.classList.add('ball-container')
+      const ball = document.createElement('div')
+      ball.classList.add('ball')
+      ball.innerText = number[0]
+      if (number[0] <= 10) { ball.style.backgroundColor = "#fbc400"; }
+      else if (number[0] <= 20) { ball.style.backgroundColor = "#69c8f2"; }
+      else if (number[0] <= 30) { ball.style.backgroundColor = "#ff7272"; }
+      else if (number[0] <= 40) { ball.style.backgroundColor = "#aaa"; }
+      else if (number[0] <= 45) { ball.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball)
+      const ball_2 = document.createElement('div')
+      ball_2.classList.add('ball')
+      ball_2.innerText = number[1]
+      if (number[1] <= 10) { ball_2.style.backgroundColor = "#fbc400"; }
+      else if (number[1] <= 20) { ball_2.style.backgroundColor = "#69c8f2"; }
+      else if (number[1] <= 30) { ball_2.style.backgroundColor = "#ff7272"; }
+      else if (number[1] <= 40) { ball_2.style.backgroundColor = "#aaa"; }
+      else if (number[1] <= 45) { ball_2.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball_2)
+      const ball_3 = document.createElement('div')
+      ball_3.classList.add('ball')
+      ball_3.innerText = number[2]
+      if (number[2] <= 10) { ball_3.style.backgroundColor = "#fbc400"; }
+      else if (number[2] <= 20) { ball_3.style.backgroundColor = "#69c8f2"; }
+      else if (number[2] <= 30) { ball_3.style.backgroundColor = "#ff7272"; }
+      else if (number[2] <= 40) { ball_3.style.backgroundColor = "#aaa"; }
+      else if (number[2] <= 45) { ball_3.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball_3)
+      const ball_4 = document.createElement('div')
+      ball_4.classList.add('ball')
+      ball_4.innerText = number[3]
+      if (number[3] <= 10) { ball_4.style.backgroundColor = "#fbc400"; }
+      else if (number[3] <= 20) { ball_4.style.backgroundColor = "#69c8f2"; }
+      else if (number[3] <= 30) { ball_4.style.backgroundColor = "#ff7272"; }
+      else if (number[3] <= 40) { ball_4.style.backgroundColor = "#aaa"; }
+      else if (number[3] <= 45) { ball_4.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball_4)
+      const ball_5 = document.createElement('div')
+      ball_5.classList.add('ball')
+      ball_5.innerText = number[4]
+      if (number[4] <= 10) { ball_5.style.backgroundColor = "#fbc400"; }
+      else if (number[4] <= 20) { ball_5.style.backgroundColor = "#69c8f2"; }
+      else if (number[4] <= 30) { ball_5.style.backgroundColor = "#ff7272"; }
+      else if (number[4] <= 40) { ball_5.style.backgroundColor = "#aaa"; }
+      else if (number[4] <= 45) { ball_5.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball_5)
+      const line = document.createElement('hr')
+      const ball_6 = document.createElement('div')
+      ball_6.classList.add('ball')
+      ball_6.innerText = number[5]
+      if (number[5] <= 10) { ball_6.style.backgroundColor = "#fbc400"; }
+      else if (number[5] <= 20) { ball_6.style.backgroundColor = "#69c8f2"; }
+      else if (number[5] <= 30) { ball_6.style.backgroundColor = "#ff7272"; }
+      else if (number[5] <= 40) { ball_6.style.backgroundColor = "#aaa"; }
+      else if (number[5] <= 45) { ball_6.style.backgroundColor = "#b0d840"; }
+      ballcontainer.appendChild(ball_6)
+
+      const result = document.querySelector('#result')
+      result.appendChild(ballcontainer)
+      result.appendChild(line)
+
+
+    })
+  </script>
+</body>
+
+</html>

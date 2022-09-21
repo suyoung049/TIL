@@ -23,6 +23,6 @@ while i < m-1:
 
     else:
         count = 0
-    i += 1           # index를 두번씩 더해준다.
+    i += 1           # 연속으로 안에 포함되는 문자열도 있기때문에 따로 지정
 
 print(result)

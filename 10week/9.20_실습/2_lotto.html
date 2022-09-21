@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>토이프로젝트</title>
+  <style>
+    .ball {
+      margin: 0.5rem;
+      width: 7rem;
+      height: 7rem;
+      background-color: yellowgreen;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 7rem;
+      font-size: xx-large;
+      font-weight: bold;
+    }
+
+    .ball-container {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>로또 추천 번호</h1>
+  <button id="randomBtn">번호 생성</button>
+  <select id="number">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+
+  <div id='result'></div>
+  <div id="result"></div>
+  <div class="ball-container">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    const button = document.querySelector('#randomBtn')
+    button.addEventListener('click', function () {
+      const target = document.getElementById("number");
+      const value = target.options[target.selectedIndex].value
+      console.log(value)
+
+      const number = _.sampleSize(_.range(1, 46), 6)
+      console.log(number)
+      const ballcontainer = document.createElement('div')
+      ballcontainer.classList.add('ball-container')
+      for (let i = 0; i < value; i++) {
+        const ball = document.createElement('div')
+        ball.classList.add('ball')
+        ball.innerText = number[i]
+        if (number[i] <= 10) { ball.style.backgroundColor = "#fbc400"; }
+        else if (number[i] <= 20) { ball.style.backgroundColor = "#69c8f2"; }
+        else if (number[i] <= 30) { ball.style.backgroundColor = "#ff7272"; }
+        else if (number[i] <= 40) { ball.style.backgroundColor = "#aaa"; }
+        else if (number[i] <= 45) { ball.style.backgroundColor = "#b0d840"; }
+        ballcontainer.appendChild(ball)
+      }
+      const line = document.createElement('hr')
+
+
+      const result = document.querySelector('#result')
+      result.appendChild(ballcontainer)
+      result.appendChild(line)
+
+
+    })
+  </script>
+</body>
+
+</html>

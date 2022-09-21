@@ -26,6 +26,7 @@ for test_case in range(T):
     pprint(matrix)
     
     def bfs(y,x):
+        
        
         q = deque([(y,x)])
         check[y][x] = True

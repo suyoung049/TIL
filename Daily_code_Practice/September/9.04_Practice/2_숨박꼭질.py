@@ -6,8 +6,8 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-stay = [0] * 1000001
-visit = [0] * 1000001
+stay = [0] * 50
+visit = [0] * 50
 
 dy = [1, -1, 2]
 
@@ -25,7 +25,7 @@ def bfs(start):
 
                 ny = ey + dy[i]
 
-                if 0<= ny <1000001 and visit[ny] == 0:
+                if 0<= ny <50 and visit[ny] == 0:
                     visit[ny] = 1
                     stay[ny] = stay[ey] + 1
                     q.append(ny)
@@ -33,10 +33,10 @@ def bfs(start):
             else:
                 ny = ey*dy[i]
 
-                if 0<= ny < 1000001 and visit[ny] == 0:
+                if 0<= ny < 50 and visit[ny] == 0:
                     visit[ny] = 1
                     stay[ny] = stay[ey] + 1
                     q.append(ny)
 
 bfs(n)
-print(stay[m])                
+print(stay[m])              

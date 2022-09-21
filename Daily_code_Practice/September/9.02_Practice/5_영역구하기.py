@@ -3,6 +3,10 @@ from collections import deque
 sys.stdin = open('5_input.txt', 'r')
 input = sys.stdin.readline
 
+def pprint(list_):
+    for row in list_:
+        print(row)
+
 
 N, M, K = map(int, input().split())
 dy = [0, 1, 0, -1]
@@ -22,6 +26,7 @@ for _ in range(K):
     for j in range(y1,y2):
         for i in range(x1,x2):
             map[j][i] = 1
+pprint(map)
 
 def bfs(y,x):
     size = 1
