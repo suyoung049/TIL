@@ -62,4 +62,11 @@
 
 ## 11week(HTML, Django)
 
-### ❤ 9.19  💪 [9.21](./10week/9.21_Theory.md)
+### ❤ 9.19  💪 [9.21](./10week/9.21_Theory.md)  😁 [9.22](./10week/9.22_Theory.md)
+
+
+
+## 12week(HTML, Django)
+
+### 👍 [9.26](./12week/9.26_Theory.md)
+

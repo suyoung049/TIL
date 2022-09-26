@@ -54,3 +54,4 @@ bfs(n)
 print(stay)
 
 
+
