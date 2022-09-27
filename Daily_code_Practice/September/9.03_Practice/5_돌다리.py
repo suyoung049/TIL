@@ -14,11 +14,11 @@ M=int(M)
 dy = [1, -1, A, -A, B, -B, A, B]
 
 stone = [0] * 100001
-visit = [False] * 100001
+
 
 def bfs(start):
     q = deque([start])
-    visit[start] = True
+    
 
     while q:
         ey = q.popleft()
@@ -27,18 +27,18 @@ def bfs(start):
             if i < 6 :
                 ny = ey + dy[i]
 
-                if 0<= ny < 100001 and visit[ny] == False:
+                if 0<= ny < 100001 and stone[ny] == 0:
                     q.append(ny)
-                    visit[ny] = True
+                    
                     stone[ny] = stone[ey] + 1
 
                 
             else:
                 ny = ey*dy[i]
 
-                if 0<=ny<100001 and visit[ny] == False:
+                if 0<=ny<100001 and stone[ny] == 0:
                     q.append(ny)
-                    visit[ny] = True
+                    
                     stone[ny] = stone[ey] + 1
 
 bfs(N)

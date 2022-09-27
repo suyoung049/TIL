@@ -6,10 +6,10 @@ input = sys.stdin.readline
 
 
 n, m = map(int, input().split())
-dy = [1, -1, 2]
 
-stay = [0] *51
-check = [0] *51
+
+stay = [0] * 100001
+check = [0] *100001
 
 def move(now):
     data = []
@@ -17,6 +17,7 @@ def move(now):
     for _ in range(stay[now]+ 1):
         data.append(temp)
         temp = check[temp]
+    print(data)
     print(' '.join(map(str,data[::-1])))
 
 
@@ -32,26 +33,18 @@ def bfs(y):
             print(stay[y])
 
             move(y)
-            return
+            return 
 
-        for i in range(3):
-            if i < 2:
-                ny = y + dy[i]
-
-                if 0<= ny < 51 and check[ny] == 0:
+        for ny in (y+1, y-1, 2*y):
+            if 0<= ny < 100001: 
+                if stay[ny]== 0 or stay[ny] >= stay[y] + 1: # 재방문 가능 
                     check[ny] = y
                     stay[ny] = stay[y] + 1
                     q.append(ny)
 
-            else:
-                ny = y*dy[i]
-
-                if 0<= ny < 51 and check[ny] == 0:
-                    check[ny] = y
-                    stay[ny] = stay[y] + 1
-                    q.append(ny)
 bfs(n)
-print(stay)
+
+
 
 
 

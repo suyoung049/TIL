@@ -44,29 +44,29 @@
 
 ## 8week(DB)
 
-### 🏃‍♂️ [8.22](./8week/8.22_Theory.md)  😣 [8.23](./8week/8.23_Theory.md)  😉 [8.24](./8week/8.24_Theory.md) 👏[8.25](./8week/8.25_Theory.md)
+### 🏃‍♂️ [8.22](./8week/8.22_Theory.md)   😣 [8.23](./8week/8.23_Theory.md)   😉 [8.24](./8week/8.24_Theory.md)    👏[8.25](./8week/8.25_Theory.md)
 
 
 
 ## 9week(HTML)
 
-### 👍 [8.29](./8week/8.29_Theory.md)  😫 [8.30](./8week/8.30_Theory.md)  😌 [8.31](./8week/8.31_Theory.md) 👍[9.01](./9week/9.01_Theory.md)
+### 👍 [8.29](./8week/8.29_Theory.md)   😫 [8.30](./8week/8.30_Theory.md)   😌 [8.31](./8week/8.31_Theory.md)   👍[9.01](./9week/9.01_Theory.md)
 
 
 
 ## 10week(HTML)
 
-### ⭐ [9.05](./9week/9.05_Theory.md)    👍 [9.15](./10week/9.15_Theory.md)  😫 [9.16](./10week/9.16_Theory.md)
+### ⭐ [9.05](./9week/9.05_Theory.md)     👍 [9.15](./10week/9.15_Theory.md)   😫 [9.16](./10week/9.16_Theory.md)
 
 
 
 ## 11week(HTML, Django)
 
-### ❤ 9.19  💪 [9.21](./10week/9.21_Theory.md)  😁 [9.22](./10week/9.22_Theory.md)
+### ❤ 9.19   💪 [9.21](./10week/9.21_Theory.md)   😁 [9.22](./10week/9.22_Theory.md)
 
 
 
 ## 12week(HTML, Django)
 
-### 👍 [9.26](./12week/9.26_Theory.md)
+### 👍 [9.26](./12week/9.26_Theory.md)    👌 [9.27](./12week/09.27_ORM.md)
 
