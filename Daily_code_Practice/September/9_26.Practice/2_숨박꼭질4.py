@@ -5,7 +5,7 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-stay = [0] * 50
+stay = [-1] * 50
 visite = [0] * 50
 
 def move(y):
@@ -20,6 +20,7 @@ def move(y):
 
 def bfs(start):
     q = deque([start])
+    stay[start] = 0
 
     while q:
         y = q.popleft()
@@ -31,7 +32,7 @@ def bfs(start):
         
         for ny in (y+1, y-1, 2*y):
             if 0<= ny < 50:
-                if stay[ny] == 0 or stay[ny] >= stay[y]+1:
+                if stay[ny] == -1 or stay[ny] >= stay[y]+1:
                     stay[ny] = stay[y] +1 
                     visite[ny] = y
                     q.append(ny) 
