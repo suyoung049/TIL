@@ -26,6 +26,7 @@ for k in range(1,n+1):
     for j in range(1,n+1):
         for i in range(1,n+1):
             matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j])
+print(matrix)
 
 for i in range(1, n+1):
     for j in range(1, n+1):
