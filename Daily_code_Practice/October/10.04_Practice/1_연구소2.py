@@ -55,6 +55,7 @@ for com_ in combinations(virous, m):
     
    
     max_time = check[y][x]
+    
     if min_count == 0:
         result = min(max_time, result)
 if result == sys.maxsize:
