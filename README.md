@@ -66,7 +66,12 @@
 
 
 
-## 12week(HTML, Django)
+## 12week(Django)
 
-### 👍 [9.26](./12week/9.26_Theory.md)    👌 [9.27](./12week/09.27_ORM.md)
+### 👍 [9.26](./12week/9.26_Theory.md)    👌 [9.27](./12week/09.27_ORM.md)  😁 9.28  😍 9.29
 
+
+
+## 13week(Django)
+
+### 👍 10.04   ⭐10.05
