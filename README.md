@@ -56,7 +56,7 @@
 
 ## 10week(HTML)
 
-### ⭐ [9.05](./9week/9.05_Theory.md)     👍 [9.15](./10week/9.15_Theory.md)   😫 [9.16](./10week/9.16_Theory.md)
+### ⭐ [9.05](./9week/9.05_Theory.md)   👍 9.06   😌 9.07    👍 [9.15](./10week/9.15_Theory.md)   😫 [9.16](./10week/9.16_Theory.md)
 
 
 
@@ -75,3 +75,9 @@
 ## 13week(Django)
 
 ### 👍 10.04   ⭐10.05
+
+
+
+## 14week(Django)
+
+### 👍 [10.11](./14week/10.11_Theory.md)   😉10.12
