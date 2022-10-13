@@ -14,10 +14,10 @@ for _ in range(m):
     y, x = map(int, input().split())
     matrix[y][x] = 1 # 자신보다 큰사람
 
-for k in range(n+1):
-    for j in range(n+1):
-        for i in range(n+1):
-            if matrix[j][k]==1 and matrix[k][i]:
+for k in range(1, n+1):
+    for j in range(1, n+1):
+        for i in range(1, n+1):
+            if matrix[j][k]==1 and matrix[k][i]==1:
                 matrix[j][i] = 1 # 자신보다 작은사람
 
 answer = 0
