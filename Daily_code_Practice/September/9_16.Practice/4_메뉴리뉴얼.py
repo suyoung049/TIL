@@ -7,8 +7,8 @@ from collections import Counter
 #         qw.append(j)
 # print(qw)
 
-orders = ["XYZ", "XWY", "WXA"]
-cource = [2,3,4]
+orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"]
+cource = [2,3,5]
 
 answer = []
 
@@ -22,7 +22,7 @@ for i in cource:
     
     print(result)
     menue = Counter(result)    # 카운터 메서드로 세트메뉴가 몇번 주문 되었는지 딕셔너리 형식으로 저장해주는 메서드
-
+    print(menue)
     if len(menue) > 0:          
 
         max_ = max(list(menue.values()))  # 가장 많이 주문된 세트 메뉴 구하기
