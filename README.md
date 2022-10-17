@@ -81,3 +81,9 @@
 ## 14week(Django)
 
 ### 👍 [10.11](./14week/10.11_Theory.md)   😉[10.12](./14week/10.12_Theory.md)  😣[10.13](./14week/10.13_Theory.md)
+
+
+
+## 15week(Django)
+
+### 😒 [10.17](./15week/10.17_Theory.md)   
