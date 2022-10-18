@@ -86,4 +86,5 @@
 
 ## 15week(Django)
 
-### 😒 [10.17](./15week/10.17_Theory.md)   
+### 😒 [10.17](./15week/10.17_Theory.md)  💪 [10.18](./15week/10.18_Theory.md)
+
