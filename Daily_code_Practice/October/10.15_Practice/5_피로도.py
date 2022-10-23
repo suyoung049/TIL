@@ -8,7 +8,7 @@ dungeons = [[80,20],[50,40],[30,10]]
 temp = [i for i in range(len(dungeons))]
 order = list(permutations(temp, len(dungeons)))
 cnt = 0
-
+print(temp)
 for i in order:
     i_k = k
     i_cnt = 0
