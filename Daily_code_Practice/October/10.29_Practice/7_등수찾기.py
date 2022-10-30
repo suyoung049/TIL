@@ -23,5 +23,6 @@ for k in range(1, n+1):
             if matrix[j][k] == 1 and matrix[k][i] == 1:
                 matrix[j][i] = 1
 
-                
+            
 
+pprint(matrix)

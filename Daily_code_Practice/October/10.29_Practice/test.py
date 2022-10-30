@@ -10,6 +10,7 @@ for _ in range(M):
     a -= 1; b -= 1
     matrix[a].append(b)
     rev_matrix[b].append(a)
+
 start = deque()
 start.append(S)
 visited = [False] * N
