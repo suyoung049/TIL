@@ -15,6 +15,7 @@ n, m = map(int, input().split())
 matrix = [list(map(int, input().strip()))for _ in range(n)]
 check = [[[0] * 2 for _ in range(m)] for _ in range(n)]
 check[0][0][0] = 1
+pprint(check)
 
 def bfs(y, x, z):
     q = deque([(y, x, z)])
@@ -41,4 +42,5 @@ def bfs(y, x, z):
     return -1   
 
 print(bfs(0,0,0))
+
 pprint(check)
