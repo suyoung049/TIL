@@ -3,8 +3,8 @@ from collections import Counter
 # text = ['a','b','c','d','e']
 # qw = []
 
-# for j in itertools.combinations(text, 5):
-#         qw.append(j)
+# for j in itertools.combinations(text, 2):
+#         qw.append(''.join(j))
 # print(qw)
 
 orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"]
@@ -26,6 +26,7 @@ for i in cource:
     if len(menue) > 0:          
 
         max_ = max(list(menue.values()))  # 가장 많이 주문된 세트 메뉴 구하기
+        print(max_)
 
         if max_ >= 2:
             for k, v  in menue.items():  

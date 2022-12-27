@@ -11,4 +11,5 @@ print(sentence_3)
 
 jumin = '930204-1188223'
 
-print('성별 : ' + jumin[8])
+print('성별 : ' + jumin[7:])
+print('뒤 7자리 : ' + jumin[-7:])
