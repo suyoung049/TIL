@@ -9,7 +9,8 @@ while True:
         if ingredient[i] == 1:
             if ingredient[i:i+4] == [1, 2, 3, 1]:
                 del ingredient[i:i+4]
-                i = i-3
+                i = 0
+
                 answer += 1
                 continue
             else:
