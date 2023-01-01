@@ -12,8 +12,9 @@ for _ in range(n):
 
     table.append([y,x])
 
-
+# 뒤에 있는거 먼저 정렬하는거 기억
 last = sorted(table, key=lambda x:(x[1], x[0]))
+print(last)
 
 coun = 1
 

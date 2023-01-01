@@ -23,11 +23,12 @@ while True:
     turn = 0
 
     for _ in range(4):
-        ny = r + dy[(d+3)%4]
-        nx = c + dx[(d+3)%4]
-
         d = (d+3)%4
+        
+        ny = r + dy[d]
+        nx = c + dx[d]
 
+     
         if 0<= ny < n and 0<= nx <m and matrix[ny][nx] == 0:
             if not visit[ny][nx]:
                 visit[ny][nx] = True
