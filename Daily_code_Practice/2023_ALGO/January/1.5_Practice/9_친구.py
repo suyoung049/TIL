@@ -1,4 +1,5 @@
 import sys
+sys.stdin = open('9_input.txt','r')
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
@@ -24,13 +25,12 @@ def dfs(s, num):
         if not friend[i]:
             friend[i] = True
             dfs(i, num+1)
-            friend[i] = False
+    friend[s] = False
         
 
 for i in range(n):
     friend[i] = True
     dfs(i, 0)
-    friend[i] = False
     if result:
         break
 
