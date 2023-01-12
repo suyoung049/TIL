@@ -3,9 +3,14 @@ sys.stdin = open('4_input.txt', 'r')
 from itertools import combinations
 input = sys.stdin.readline
 
+def pprint(list_):
+    for row in list_:
+        print(row)
+
 n, m = map(int, input().split())
 bag = [[0,0]]
 value = [[0] * (m+1) for _ in range(n+1)]
+print(value)
 
 for _ in range(n):
     a, b = map(int, input().split())
@@ -22,7 +27,7 @@ for j in range(n+1):
         else:
             value[j][i] = max(v + value[j-1][i-w], value[j-1][i])
 
-print(value[n][m])
+pprint(value)
 
 # bag = []
 

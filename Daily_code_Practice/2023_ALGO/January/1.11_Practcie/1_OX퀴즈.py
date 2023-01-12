@@ -3,6 +3,7 @@ result = []
 
 for i in  quiz:
     i = i.split('=')
+    print(i)
     if eval(i[0]) == int(i[1]):
         result.append('O')
     
