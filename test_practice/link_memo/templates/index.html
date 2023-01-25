@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" type="text/css" href = "{{url_for('static', filename='my_style.css')}}">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -12,13 +13,14 @@
 <!-- Optional JavaScript -->
 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
   <title>SW사관학교 정글 | bootstrap</title>
 <script>
-  $(document).ready(function(){
-    showArticles()
-  })
+   $(document).ready(function () {
+                showArticles()
+            })
 
   function openclose() {
     let status = $('#post-box').css('display')
@@ -32,13 +34,23 @@
   }
 
   function postArticle(){
+    let url = $('#post-url').val()
+    let comment = $('#post-comment').val()
+
     $.ajax({
       type:'POST',
       url:'/memo',
-      data:{},
+      data:{url_give:url, comment_give: comment},
       success: function(response){
         if (response['result']=='success') {
-          alert(response['msg'])
+          alert("포스팅 성공")
+          showArticles()
+          $('#post-url').val('')
+          $('#post-comment').val('')
+          $('#post-box').hide()
+          $('#btn-posting-box').text('포스팅 박스 열기')
+        } else {
+          alert('서버 오류!')
         }
       }
 
@@ -46,20 +58,29 @@
   }
 
   function showArticles() {
-    $('#card-box').html("")
+    $("#card-box").html("")
     $.ajax({
       type:"GET",
       url:"/memo",
       data:{},
       success:function(response){
-        if (response['result'] == "success"){
-          alert(response['msg'])
+        let articles = response['articles']
+        for (let i=0;i< articles.length;i++){
+          makeCard(articles[i]['image'], articles[i]['url'], articles[i]['title'], articles[i]['desc'], articles[i]['comment'])
         }
-      }
+        }
     })
   }
-  function makeCard(url, title, desc, comment, image){
-
+  function makeCard(image, url, title, desc, comment) {
+                let tempHtml = `<div class="card">
+                        <img class="card-img-top" src="${image}" alt="Card image cap">
+                        <div class="card-body">
+                        <a href="${url}" target="_blank" class="card-title">${title}</a>
+                        <p class="card-text">${desc}</p>
+                        <p class="card-text comment">${comment}</p>
+                        </div>
+                    </div>`;
+                $("#card-box").append(tempHtml);
   }
   
 </script>
@@ -78,11 +99,11 @@
   <div id ="post-box" class="box">
     <div class="form-group">
       <label for="URL">아티클 URL</label>
-      <input type="url" class="form-control" id="exampleInputurl" aria-describedby="urlHelp">
+      <input type="url" class="form-control" id="post-url" aria-describedby="urlHelp">
     </div>
     <div class="form-group">
       <label for="comment">간단 코멘트</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="post-comment" rows="3"></textarea>
     </div>
     <button onclick="postArticle()" type="submit" class="btn btn-primary">기사저장</button>
   </div>
