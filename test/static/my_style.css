@@ -1,0 +1,21 @@
+* {
+  font-family: 'Stylish', sans-serif;
+}
+  
+  .wrap{
+    width: 1200px;
+    margin: auto;
+  }
+
+  .text_box {
+    width: 450px;
+    margin-top: 30px;
+  }
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-button {
+  margin-top: 30px;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href = "{{url_for('static', filename='my_style.css')}}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+<!-- Optional JavaScript -->
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+  <title>SW사관학교 정글 | 간단메모</title>
+<script>
+   $(document).ready(function () {
+                showMemos()
+            })
+  function changeMemo(id) {
+    let title = $('#' + id + '> .card-title').text()
+    let text = $('#' + id + '> .card-text').text()
+    console.log(title)
+    
+    $('#' + id).html('')
+    let tempHtml = `<div class="form-group">
+            <input type="text" class="form-control mod-title" id="change-title" value="${title}">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control mod-text" id="change-text" rows="4">${text}</textarea>
+          </div>
+          <button onclick="saveMemo('${id}')" type="submit" class="btn btn-primary">저장</button>`
+    $('#' + id).append(tempHtml)
+  }
+
+  function saveMemo(id){
+    
+    let title = $('#change-title').val()
+    let text = $('#change-text').val()
+
+    $.ajax({
+      type:'POST',
+      url:'/memo/change',
+      data:{title_give:title, text_give:text, id_give:id},
+      success: function(response){
+        if (response['result']=='success') {
+          alert("수정 완료")
+          showMemos()
+        } else {
+          alert('서버 오류!')
+        }
+      }
+
+    })
+  }
+
+ 
+
+  function postMemo(){
+    let title = $('#input-title').val()
+    let text = $('#input-text').val()
+
+    $.ajax({
+      type:'POST',
+      url:'/memo',
+      data:{title_give:title, text_give: text},
+      success: function(response){
+        if (response['result']=='success') {
+          alert("저장 완료")
+          $('#input-title').val('')
+          $('#input-text').val('')
+          showMemos()
+        } else {
+          alert('서버 오류!')
+        }
+      }
+
+    })
+  }
+
+  function showMemos() {
+    $("#card-list").html("")
+    $.ajax({
+      type:"GET",
+      url:"/memo",
+      data:{},
+      success:function(response){
+        let memos = response['memos']
+        for (let i=0;i< memos.length;i++){
+          makeMemo(memos[i]['id'], memos[i]['title'], memos[i]['text'])
+        }
+        }
+    })
+  }
+  function makeMemo(id, title, text) {
+                let tempHtml =`<div class="card">
+                                  <div class="card-body" id="${id}">
+                                    <h2 class="card-title">${title}</h2>
+                                    <h5 class="card-text">${text}</h5>
+                                    <div class="card-button"><button onclick="changeMemo('${id}')" class="btn btn-info">수정</button>
+                                      <button onclick="deleteMemo('${id}')" class="btn btn-danger">삭제</button></div>
+                                  </div>
+                                </div>`
+      $("#card-list").append(tempHtml)
+  }
+
+  function deleteMemo(id) {
+      $.ajax({
+        type: 'POST',
+        url: '/memo/delete',
+        data: {'id_give': id},
+        success: function (response) {
+          if (response['result'] == 'success') {
+            alert('삭제 완료!')
+            showMemos()
+          }
+        }
+
+      })
+    }
+  
+</script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="jumbotron">
+      <h1 class="display-4">나홀로 메모장 <span class="badge badge-secondary">ver 2.0</span></h1>
+      <div id ="input-box" class="text_box">
+        <div class="form-group">
+          <input type="text" class="form-control" id="input-title" placeholder="메모 제목을 입력하세요">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="input-text" placeholder="내용을 입력하세요" rows="4"></textarea>
+        </div>
+        <button onclick="postMemo()" type="submit" class="btn btn-primary">저장하기</button>
+      </div>
+      
+  </div>
+
+    <div id = "card-list" class="card-columns">
+      <div class="card">
+        <div class="card-body" id="id-0">
+          <h2 class="card-title">첫번째 제목을 입력합니다</h2>
+          <h5 class="card-text">첫번째 내용을 입력합니다</h5>
+          <div class="card-button"><button onclick="changeMemo('#id-0')" class="btn btn-info">수정</button>
+            <button onclick="postArticle()" class="btn btn-danger">삭제</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">첫번째 제목을 입력합니다</h2>
+          <h5 class="card-text">첫번째 내용을 입력합니다</h5>
+          <div class="card-button"><button onclick="changeMemo()" class="btn btn-info">수정</button>
+            <button onclick="postArticle()" class="btn btn-danger">삭제</button></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group">
+            <input type="text" class="form-control mod-title" id="change-title" value="첫번째 제목을 입력합니다">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control mod-text" id="change-text" rows="4">첫번째 내용을 입력합니다</textarea>
+          </div>
+          <button onclick="postArticle()" type="submit" class="btn btn-primary">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
