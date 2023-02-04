@@ -1,13 +1,15 @@
-numbers = [2, 3, 3, 5]
-result = []
 
-for y in range(len(numbers)):
-    for j in range(y+1, len(numbers)):
-        if numbers[y] < numbers[j]:
-            result.append(numbers[j])
-            break
-    else:
-        result.append(-1)
+numbers = [2, 3, 3, 5]
+stack = []
+answer = [0] * len(numbers)
+
+for i in range(len(numbers)):
+        while stack and numbers[stack[-1]] < numbers[i]:
+            answer[stack.pop()] = numbers[i]
+        stack.append(i)
+while stack:
+        answer[stack.pop()] = -1
+
 
             
     
