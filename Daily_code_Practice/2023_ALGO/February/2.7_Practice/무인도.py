@@ -42,8 +42,8 @@ for j in range(n):
         if maps[j][i] != 'X' and not check[j][i]:
             check[j][i] = True
             sum_ += int(maps[j][i])
-            print(bfs(j, i, sum_))
+            answer.append((bfs(j, i, sum_)))
 
-pprint(check)
+print
 
         
