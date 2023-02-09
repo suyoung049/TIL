@@ -1,5 +1,5 @@
 from collections import deque
-maps = ["X591X","X1X5X","X231X", "1XXX1"]
+maps = ["XXX","XXX","XXX"]
 
 for i in maps:
     m = len(i)
@@ -44,6 +44,10 @@ for j in range(n):
             sum_ += int(maps[j][i])
             answer.append((bfs(j, i, sum_)))
 
-print
+if not answer:
+    print([-1])
+else:
+    answer.sort()
+    print(answer)
 
         
