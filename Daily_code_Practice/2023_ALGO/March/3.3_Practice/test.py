@@ -11,6 +11,7 @@ operater = '+'*op_num[0] + '-'*op_num[1] + '*'*op_num[2] + '%' *op_num[3]
 
 oper_perm = permutations(operater, n-1)
 oper_perm = set(oper_perm)
+
 result = []
 for perm in oper_perm:
     

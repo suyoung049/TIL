@@ -24,6 +24,7 @@ def bfs(n, k):
 
         n = list(str(y))
 
+        # 문제에서 주어진 수를 바꾸는 로직
         for i in range(m-1):
             for j in range(i+1, m):
                 if i == 0 and n[j] == '0':
@@ -40,4 +41,9 @@ def bfs(n, k):
 
 
 
-print(bfs(n, count_))
+result = bfs(n, count_)
+
+if result == 0:
+    print(-1)
+else:
+    print(result)

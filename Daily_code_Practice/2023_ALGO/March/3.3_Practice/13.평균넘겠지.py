@@ -10,6 +10,7 @@ for test_case in range(T):
     num_list.pop(0)
 
     aver = sum(num_list)/len(num_list)
+    print(aver)
     people = 0
 
     for score in num_list:
@@ -19,6 +20,7 @@ for test_case in range(T):
         answer = round(answer, 3)
     a = "{:.3f}%".format(answer)
     print(a)
+   
     
     
 
