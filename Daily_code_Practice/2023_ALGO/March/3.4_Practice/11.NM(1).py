@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('11_input.txt', 'r')
+sys.stdin = open('12_input.txt', 'r')
 input = sys.stdin.readline
 
 n, m = map(int, input().split())

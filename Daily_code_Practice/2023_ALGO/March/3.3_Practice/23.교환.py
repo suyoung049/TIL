@@ -18,7 +18,7 @@ def bfs(n, k):
     while q:
         y, x = q.popleft()
 
-        if x == count_:
+        if x == k:
             answer = max(answer, y)
             continue
 

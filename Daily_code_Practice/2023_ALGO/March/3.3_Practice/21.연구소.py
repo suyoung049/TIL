@@ -13,7 +13,8 @@ def pprint(list_):
     for row in list_:
         print(row)
 
-matrix = [list(map(int, input().split())) for _ in range(n)]
+matrix = [list(input().split()) for _ in range(n)]
+pprint(matrix)
 INF = sys.maxsize
 
 

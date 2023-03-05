@@ -2,26 +2,17 @@ import sys
 sys.stdin = open('10_input.txt', 'r')
 input = sys.stdin.readline
 
-n = int(input())
-start = 1
-middle = 2
-end = 3
-
-rute = []
-
-def hanoi(n, start, end, middle):
-    
-
+def hanoi_f(start, end, middle,  n):
     if n == 1:
-        print(start, end)
+        print(start,end)
         return
-    hanoi(n-1, start, middle, end)
-    print(start, end)
-    hanoi(n-1, middle, end, middle)
 
+    hanoi_f(start, middle, end, n-1) #1단계 (1->2)
+    print(start, end) #2단계 (마지막원반 1->3)
+    hanoi_f(middle, end, start, n-1) #3단계 (2->3)
 
-hanoi(n, start, end, middle)
-
-print(len(rute))
-for i in rute:
-    print(i[0], i[1])
+#메인
+n = int(input())
+print(2**n-1)
+if n <= 20:
+    hanoi_f(1,3,2,n)
