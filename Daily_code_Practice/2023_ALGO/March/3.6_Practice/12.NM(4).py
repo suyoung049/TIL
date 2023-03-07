@@ -1,14 +1,14 @@
 import sys
-sys.stdin = open('8_input.txt', 'r')
+sys.stdin = open('12_input.txt', 'r')
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-num_li = list(map(int, input().split()))
 
-rs = []
+num_li = list(map(int, input().split()))
 num_li.sort()
 
-
+rs = []
+check = [False] * n
 
 
 def recu(num_, i):
@@ -16,13 +16,12 @@ def recu(num_, i):
         print(' '.join(map(str, rs)))
         return
 
-    for j in range(i,n):
-        check = [False] * n
-        if check[j] == False:
+    for j in range(i, n):
+        if not check[j]:
             check[j] = True
             rs.append(num_li[j])
-            recu(num_+1, j)
+            recu(num_ + 1, j)
             check[j] = False
             rs.pop()
 
-recu(0,0)
+recu(0, 0)
