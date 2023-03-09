@@ -8,7 +8,7 @@ def hanoi_f(start, end, middle,  n):
         return
 
     hanoi_f(start, middle, end, n-1) #1단계 (1->2)
-    print(start, end) #2단계 (마지막원반 1->3)
+    hanoi_f(start, end, middle,  1) #2단계 (마지막원반 1->3)
     hanoi_f(middle, end, start, n-1) #3단계 (2->3)
 
 #메인
