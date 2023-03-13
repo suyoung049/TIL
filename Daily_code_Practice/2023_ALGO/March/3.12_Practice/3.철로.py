@@ -42,7 +42,8 @@ for road in roads:
             heappush(heap_line, road)
             break
 
-        heappop(heap_line)
+        else:
+            heappop(heap_line)
     
     answer = max(answer, len(heap_line))
 
