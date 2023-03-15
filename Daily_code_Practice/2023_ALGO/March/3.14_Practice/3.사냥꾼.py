@@ -20,7 +20,7 @@ animal_place = sorted(animal_place, key=lambda x:(x[0], x[1]))
 count_ = 0
 idx = 0
 for y, x in animal_place:
-    start = 1
+    start = 0
     end = len(shout_list) - 1
 
     while True:
@@ -30,8 +30,8 @@ for y, x in animal_place:
         mid = (start + end)//2
 
         if shout_list[mid] < y:
-            start = mid + 1
             idx = mid
+            start = mid + 1
 
         else:
             end = mid -1
@@ -42,7 +42,7 @@ for y, x in animal_place:
     elif idx + 1 < len(shout_list) and abs(shout_list[idx + 1] -y) + x <= l:
         count_ += 1
 
-    elif idx > 0 and abs(shout_list[idx-1] - y) + x <= l:
+    elif idx - 1 > 0 and abs(shout_list[idx-1] - y) + x <= l:
         count_ += 1 
 
 print(count_)

@@ -13,6 +13,7 @@ for _ in range(n):
 home_location.sort()
 
 start = 1
+# 설치거리 이기 때문에 최대거리에서 이분 탐색
 end = home_location[-1] - home_location[0]
 
 while True:

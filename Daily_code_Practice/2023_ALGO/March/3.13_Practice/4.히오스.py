@@ -30,7 +30,7 @@ while True:
         end = mid -1
     
     else:
-        start = mid + 1
         max_level = mid
+        start = mid + 1
 
 print(max_level)
