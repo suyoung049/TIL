@@ -15,13 +15,14 @@ for _ in range(n):
     tree[data] = [data, left_node, right_node]
 
 
+# 전위 순회
 def pre_order(node):
     print(node[0], end='')
     if node[1] != None:
         pre_order(tree[node[1]])
     if node[2] != None:
         pre_order(tree[node[2]])
-
+# 중위 순회
 def in_order(node):
     if node[1] != None:
         in_order(tree[node[1]])
@@ -29,6 +30,7 @@ def in_order(node):
     if node[2] != None:
         in_order(tree[node[2]])
 
+# 후위 순회
 def post_order(node):
     if node[1] != None:
         post_order(tree[node[1]])
