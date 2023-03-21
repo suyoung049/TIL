@@ -23,6 +23,7 @@ def bfs(q, walk_check, fire_check):
     while q:
         y, x, state = q.popleft()
 
+        # 도착지는 불이 안 탄다는 조건이 없으므로 도착 전에도 불이 아니라는 조건 필요
         if (y == n - 1 or x == m - 1 or y == 0 or x == 0) and matrix[y][x] != 'F' and state == 'J':
                 return walk_check[y][x] + 1
         

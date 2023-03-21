@@ -1,4 +1,5 @@
 import sys
+sys.stdin = open('5_input.txt', 'r')
 from collections import deque
 input = sys.stdin.readline
 
@@ -24,14 +25,12 @@ def bfs(end_y, end_x, q):
             nx = x + dx[i]
         
             if 0<= ny < n and 0<= nx< m:
-                if (matrix[ny][nx] == '.' or matrix[ny][nx] == 'D') and matrix[y][x] == 'S':
+                if (matrix[ny][nx] == '.' or matrix[ny][nx] == 'D') and matrix[y][x] != '*':
                     if not walk_check[ny][nx] and type_ == 'S':
-                        matrix[ny][nx] = 'S'
                         walk_check[ny][nx] = walk_check[y][x] + 1
                         q.append((ny, nx, 'S'))
                     
-                elif matrix[ny][nx] == '.'  or matrix[ny][nx] == 'S':
-                    if not water_check[ny][nx] and type_ == '*':
+                elif matrix[ny][nx] == '.' and not water_check[ny][nx] and type_ == '*':
                         water_check[ny][nx] = True
                         matrix[ny][nx] = '*'
                         q.append((ny,nx, '*'))

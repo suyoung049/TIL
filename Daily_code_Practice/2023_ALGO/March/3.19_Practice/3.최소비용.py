@@ -26,7 +26,6 @@ def dijkstra(start):
 
     while heapque:
         y, line_cost = heappop(heapque)
-
         if cost[y] < line_cost:
             continue
 
