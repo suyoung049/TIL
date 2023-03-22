@@ -14,6 +14,7 @@ for _ in range(n):
 
 coin.sort()
 
+
 INF = sys.maxsize
 check = [INF] * 100001
 
