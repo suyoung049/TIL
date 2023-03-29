@@ -11,60 +11,78 @@ n = int(input())
 
 school = [list(input().split()) for _ in range(n)]
 
-def bfs():
-    watch = True
-    check = [[False] * n for _ in range(n)]
+def watch(y, x, direction):
     
-    q = deque()
-    for j in range(n):
-        for i in range(n):
-            if school[j][i] == 'T':
-                check[j][i] = True
-                q.append((j,i))
+    if direction == 0:
+        while y >= 0:
+            if school[y][x] == 'S':
+                return True
+            if school[y][x] == 'O':
+                return False
+            y -= 1
+    
+    if direction == 1:
+        while y < n:
+            if school[y][x] == 'S':
+                return True
+            if school[y][x] == 'O':
+                return False
+            y += 1
+    
+    if direction == 2:
+        while x >= 0:
+            if school[y][x] == 'S':
+                return True
+            if school[y][x] == 'O':
+                return False
+            
+            x -= 1
 
-    while q:
-        y, x = q.popleft()
-
+    if direction == 3:
+        while x < n:
+            if school[y][x] == 'S':
+                return True
+            if school[y][x] == 'O':
+                return False
+            
+            x += 1
+    
+    return False
+    
+    
+def process():
+    for y, x in teach_li:
         for i in range(4):
-            ny = y + dy[i]
-            nx = x + dx[i]
+            if watch(y, x, i):
+                return True
+    return False
 
-            if 0<= ny < n and 0<= nx < n and not check[ny][nx] and school[ny][nx] != 'O':
-                if school[ny][nx] == 'S':
-                    watch = False
-                    break
-
-                elif school[ny][nx] == 'X':
-                    check[ny][nx] = True
-                    if (ny == n - 1 or nx == n - 1 or ny == 0 or nx == 0):
-                        continue
-                    else:
-                        q.append((ny, nx))
-
-    
-    return watch
 
 empty_li = []
+teach_li = []
 for j in range(n):
     for i in range(n):
         if school[j][i] == 'X':
             empty_li.append((j,i))
+        elif school[j][i] == 'T':
+            teach_li.append((j,i))
+   
 
-answer = 0
+answer = False
 for wall in combinations(empty_li, 3):
     for w in wall:
         school[w[0]][w[1]] = 'O'
     
-    watch = bfs()
+    result = process()
 
-    if watch == True:
-        answer = 1
+    if not result:
+        answer = True
         break
 
     for w in wall:
         school[w[0]][w[1]] = 'X'
 
-if answer == 1:
+if answer:
     print('YES')
 else:
     print('NO')
