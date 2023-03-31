@@ -14,7 +14,7 @@ def get_minium(n, w, j, route, dp):
     mini_dist = INF
     for i in range(1, n):
         if isin(i, route):
-            before_route = diff(route, i)
+            before_route = diff(route, i) 
             dist = w[j][i] + dp[i][before_route]
             if mini_dist > dist:
                 mini_dist = dist
