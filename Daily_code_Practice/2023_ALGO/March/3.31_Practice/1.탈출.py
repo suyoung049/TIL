@@ -21,7 +21,7 @@ def dfs(y,x):
     if (y,x) == (n-1, n-1):
         return 1
     
-    # 만약 방문 한적이 있다면 그 지점을 방문한 
+    # 만약 방문 한적이 있다면 그 지점을 방문한 경우의 수를 그대로 return
     if dp[y][x] is not None:
         return dp[y][x]
     
@@ -31,7 +31,7 @@ def dfs(y,x):
         ny = y + dy[i] * matrix[y][x]
         nx = x + dx[i] * matrix[y][x]
 
-        # 이동 할 수 있는 지점에서 다시 재귀 함수 호출
+        # 이동 할 수 있는 지점에서 다시 재귀 함수 호출 그 다음지점까지 갈 수 있는 경우의 수 return
         if 0<= ny < n and 0<= nx <n:
             dp[y][x] += dfs(ny, nx)
 
