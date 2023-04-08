@@ -123,3 +123,115 @@
 
 
 
+### Red-Black Tree 삭제
+
+0. 삭제 전 RB 트리 속성 만족한 상태
+1. 삭제 방식은 일반적인 BST와 동일
+2. 삭제 후 RB 트리 속성 위반 여부 확인
+3. RB 트리 속성을 위반 했다면 재조정
+4. RB 트리 속성을 다시 만족
+
+
+
+** successor : 노드의 오른쪽에서 가장 작은 값
+
+##### RB 트리에서 노드를 삭제할 때 어떤 색이 삭제되는지가 속성 위반 여부를 확인할 때 매우 중요
+
+- 삭제하려는 노드의 자녀가 없거나 하나라면 삭제되는 색 = 삭제되는 노드의 색
+
+- 삭제 하려는 노드의 자녀가 둘이라면 삭제되는 색 = 삭제되는 노드의 successor의 색
+
+  
+
+#### 속성 위반 여부 확인은 삭제되는 색을 통해
+
+- 삭제하려는 노드의 자녀가 없거나 하나라면 삭제되는 색은 삭제되는 노드의 색
+- 삭제하려는 노드의 자녀가 둘이라면 삭제되는 색은 삭제 되는 노드의 successor의 색
+
+##### 삭제되는 색이 RED라면 어떤 속성도 위반하지 않는다
+
+##### 삭제된 색이 BLACK이라면 # 2, # 4, # 5 속성을 위반 할 수 있다,
+
+
+
+##### 삭제되는 색이 black일 때 # 2 위반 해결하기
+
+- 루트 노드를 black으로 바꾸면 된다
+
+##### 나머지 경우 삭제 되는 색이 black일 때 특수한 상황을 제외하면 #5 속성을 항상 위반하게 된다. 
+
+- 삭제되는 색이 black이고 #5 위반일 때 extra black 부여
+  - #5 속성을 다시 만족시키기 위해 삭제된 색의 위치를 대체한 노드에 extra black을 부여한다.
+  - extra black의 역활 : 경로에서 black 수를 카운트 할 때 extra black은 하나의 black으로 카운트 된다.
+  - black이 삭제 되었으므로 #5 속성을 위반했고 extra black을 부여해서 #5 속성을 다시 만족시켜야 한다.
+  - doubly black : extra black이 부여된 black 노드
+- 삭제 후 연결된 노드의 색이 red 일때 마찬가지로 exrta black 부여
+  - red-and-black : extra black이 부여된 red 노드
+- 삭제되는 색이 black이고 # 5 위반일때, 
+  - extra black을 부여받은 노드는 doubly black이 되거나 red-and-black이 된다.
+
+
+
+##### extra black 부여 후 red-and-black 해결하기
+
+- red-and-black을 black으로 바꾸면 해결
+
+##### extra black 부여 후 doubly black 해결하기
+
+- extra black을 부여했더니 double black 노드가 생겼다면 결국 extra black을 어떻게 없앨 것인지가 관건
+- doubly black의 extra black을 없애는 방법은 총 네가지 case로 분류됨
+  - doubly black의 오른쪽 형제가 black &  그 형제의 오른쪽 자녀가 red일 때 
+    - 그 red를 doubly black 위로 옮기고 옮긴 red로 extra black을 전달해서 red-and-black으로 만들면 red-and-black을 black으로 바꿔서 해결 
+    - 오른쪽 형제는 부모의 색으로, 오른쪽 형제의 오른쪽 자녀는 black으로, 부모는 black으로 바꾼 후에 부모의 기준으로 왼쪽으로 회전하면 해결(오른쪽 왼쪽 바꿔도 성립)
+  - doubly black의 오른쪽 형제가 black & 그 형제의 왼쪽 자녀가 red & 그 형제의 오른쪽 자녀는 black일 때
+    - doubly black의 형제의 오른쪽 자녀를 red(자신과 부모 노드의 색을 교환후 부모를 기준으로 오른쪽 회전 )가 되게 만들어서 이후엔 case.4를 적용
+  - doubly black의 형제가 black & 그 형제의 두 자녀 모두 black일 때
+    - doubly black과 그 형제의 black을 모아서 부모에게 전달 해서 부모가 extra black을 해결하도록 위임한다.
+  - doubly black의 형제가 red 일 때
+    - doubly black의 형제를 black으로 만든 후 case 2, 3, 4 중에 하나로 해결
+    - 부모와 형제의 색을 바꾸고 부모를 기준으로 왼쪽으로 회전한 뒤 doubly black을 기준으로 case 2, 3, 4중에 하나로 해결
+
+
+
+#### 정리
+
+##### 삭제되는 색이 black일 때 # 5 위반 해결하기
+
+- 삭제되는 색이 black일 때 삭제되는 색이 있던 위치를 대체한 노드에 extra black을 부여한다
+- 대체한 노드가 red-and-black이 되었다면 black으로 바꿔주면 끝
+- 대체한 노드가 doubly black이 되었다면 case 1, 2, 3, 4 중에 하나로 해결
+
+
+
+#### red-black tree 구현 이유
+
+red-black 트리가 왜 필요 할까?
+
+우선 순위 큐 보다 조금 더 복잡한 구조 
+
+추가, 삭제가 조금더 유용하게 하기 위해 트리가 balance를 유지하기 위해 ,
+
+blance를 맞추지 않으면 O(n)까지 증가 blance를 맞추면 O(logn)으로 줄어든다.
+
+물론 삽입, 삭제하는 부분도 O(logn)으로 맞추어야 한다.
+
+assert 사용도 디버깅 가능 
+
+
+
+calloc 과 malloc의 차이 초기화의 차이만 있는가?
+
+구조체가 다름(calloc의 argument(type, 개수)) malloc은 bus 오류가 난다.
+
+
+
+```c
+git clone --bare https://github.com/SWJungle/${project_name}.git
+cd ${project_name}.git
+# 아래 교육생 repository는 GitHub미리 만들어 놓아야 함
+git push --mirror https://github.com/${교육생ID}/${project_name}.git
+cd ..
+rm -rf ${project_name}.git
+git clone https://github.com/${교육생ID}/${project_name}.git
+```
+
