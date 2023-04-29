@@ -1,0 +1,5 @@
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host suyoung049
+    HostName ec2-15-164-98-138.ap-northeast-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile \Users\holho\OneDrive\DeskTop\key pair
