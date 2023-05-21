@@ -6,8 +6,6 @@
 
 ### 과제개요
 
-
-
 -  Supplemental page table 구현하기
 
   - 기존 pintos 에서는 pml4 페이지 테이블 제공
@@ -184,4 +182,59 @@ bool vm_claim_page (void *va);
 ```
 
 > 할당할 페이지를 요청합니다 `va`. 먼저 페이지를 가져온 다음 페이지와 함께 vm_do_claim_page를 호출해야 합니다.
+
+
+
+#### 메모리 할당받은 함수
+
+```c
+static struct frame *
+vm_get_frame (void) {
+	struct lock *frame_lock;
+	struct frame *frame = (struct frame*) malloc(sizeof(struct frame));
+	if (frame == NULL)
+		PANIC("todo");
+
+	struct page *kpage = palloc_get_page(PAL_USER);
+    // lazy_load_segment 에서 free
+	if (kpage == NULL){
+		frame = vm_evict_frame();
+		frame-> kva = NULL;
+		return frame;
+	}
+	
+	frame-> kva = kpage;
+
+	lock_acquire(&frame_lock);
+	list_push_back(&frame_table, &frame->frame_elem);
+	lock_release(&frame_lock);
+
+	/* TODO: Fill this function. */
+	ASSERT (frame != NULL);
+	ASSERT (frame->page == NULL);
+	return frame;
+}
+
+```
+
+
+
+```c
+bool
+vm_alloc_page_with_initializer (enum vm_type type, void *upage, bool writable,
+		vm_initializer *init, void *aux) {
+
+	ASSERT (VM_TYPE(type) != VM_UNINIT)
+
+	struct supplemental_page_table *spt = &thread_current ()->spt;
+
+	/* Check wheter the upage is already occupied or not. */
+	/* upage가 사용중인지 확인합니다 */
+	if (spt_find_page (spt, upage) == NULL) {
+		struct page *page = (struct page*) malloc(sizeof(struct page));
+		typedef bool(*page_initializer) (struct page*, enum vm_type, void *kva);
+		page_initializer new_initializer = NULL;
+
+		if (page == NULL)
+```
 
