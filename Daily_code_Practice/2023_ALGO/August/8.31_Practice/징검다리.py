@@ -1,34 +1,29 @@
 stones = [2, 4, 5, 3, 2, 1, 4, 2, 5, 1]
 k = 3
+answer = 0
+start = 1
+end = max(stones)
 
-result = 0
-i = 0
-while True:
-    check = True
-    if i > len(stones) -1:
-        result += 1
-    
-        i = 0
+while start <= end:
+    mid = (start + end)//2
+    lst = []
+    cnt = 1
+    for i in range(len(stones)):
+        if mid >= stones[i]:
+            cnt += 1
+        else:
+            lst.append(cnt)
+            cnt = 1
+    # 마지막 건너 뛰기 
+    lst.append(cnt)
+    if max(lst) > k:
+        end = mid -1
+    else:
+        start = mid + 1
+        answer = start
 
-    if stones[i] != 0:
-        stones[i] -= 1
-        i += 1
-    
-    elif stones[i] == 0:
-        for j in range(1, k):
-            if i + j > len(stones) -1:
-                i = i + j
-                check = False
-                break
-            if stones[i + j] != 0:
-                i = i + j
-                check = False
-                break
-        if check == True:
-            break
-print(result)    
-    
-            
+print(answer)
+
   
 
     
