@@ -7,6 +7,7 @@ n, m = map(int, input().split())
 k = int(input())
 
 matrix = [list(input().strip()) for _ in range(n)]
+print(matrix)
 
 
 I = [[0] * (m+1) for _ in range(n+1)]
