@@ -30,8 +30,11 @@ def solution(edges):
         elif out_count == 2:
             if in_count != 0:
                 answer[3] += 1
+            # 나가는 간선이 2 들어오는 간선이 없는 경우 시작 노드
             else:
                 answer[0] = key
+        
+        # 나가는 간선이 2개이상인 노드는 시작 노드
         elif out_count > 2:
             answer[0]= key
 

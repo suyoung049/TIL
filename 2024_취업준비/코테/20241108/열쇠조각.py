@@ -7,6 +7,14 @@ def pprint(matrix):
     for x in matrix:
         print(x)
 
+# key word
+# 인덱스가 넘어가는 구현이라면 사이즈를 증가시켜보자
+# 90, 180, 270으로 회전한 키를 딕셔너리 형태로 저장
+# lock을 확장된 matrix 중앙에 배치한다.
+# key를 이동시키면서 중앙의 rock이 전부 1인지 확인(0, 2일 경우 오답)
+# 0은 홈이 비워진 경우, 2는 둘다 튀어나와있는 부분이 겹친 경우이다.
+
+
 def rotation_90(matrix):
     n = len(matrix)
     rotated_matrix = [[0] * n for _ in range(n)]
@@ -68,10 +76,3 @@ print(solution(key, lock))
 
 
 
-
-
-
-
-
-
-solution(key, lock)
